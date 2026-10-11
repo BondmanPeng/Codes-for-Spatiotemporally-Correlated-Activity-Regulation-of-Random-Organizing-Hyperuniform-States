@@ -110,8 +110,8 @@ public:
     last_b_update = false;
     step_count = 0;
 
-    N_A = (int)(rho_A * L * L / (M_PI * radius_A * radius_A));
-    N_B = (int)(rho_B * L * L / (M_PI * radius_B * radius_B));
+    N_A = (int)floor(rho_A * L * L);
+    N_B = (int)floor(rho_B * L * L);
     mean_A_number_density = (double)N_A / (L * L);
 
     double max_diam = 2.0 * max(radius_A, radius_B);
@@ -137,7 +137,7 @@ public:
       spawn(2, randCV(), randCV());
 
     printf(
-        "  Binary BRO (A): N_A=%d (rho_A=%.3f), N_B=%d (rho_B=%.3f), "
+        "  Binary BRO (A, number densities): N_A=%d (rho_A=%.3f), N_B=%d (rho_B=%.3f), "
         "L=%.1f, cell_num=%d, R_A=%.2f, mean_n_A=%.4f, h=%.3f, "
         "h0=%.3f, c=%.3f, epsilon_A=%.3f\n",
         N_A, rho_A, N_B, rho_B, L, cell_num, R_A,

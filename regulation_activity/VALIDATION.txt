@@ -1,0 +1,37 @@
+Package validation:
+- BRO: CMake/GCC 12.3 build succeeded; binary_selfcheck passed, including exact circular sensing.
+- IG: CMake/GCC 12.3 build succeeded; exact_disk_selfcheck passed.
+- Circular sensing tested against direct particle scans, including particles outside
+  the radius in candidate cells, exact boundary points, periodic boundaries,
+  odd/even grids, sub-cell radii and radii spanning the box.
+- Packaged simulation/activity h0 defaults set to 2; CLI overrides remain supported.
+- Plotting scripts use package-relative data locations.
+- No trajectories, executable binaries or build directories included.
+- All seven requested/related plotting entry points passed package-local data loading
+  and PNG rendering smoke checks (60 dpi temporary previews; PDF/SVG writes disabled
+  for the check). Production code retains the original 600 dpi export setting.
+- IG S_A plotter has a square-axis fallback for older Matplotlib versions.
+- Source comments and Python docstrings removed; Python executable ASTs verified unchanged.
+
+BRO dataset replacement (2026-10-10):
+- Replaced six old area-fraction tables with seven number-density CSVs;
+  retained original table schemas and added the exact continuous fit curves.
+- Delta and S_A rows exactly match the requested figures' source exports.
+- 477 ordered, matched q bins per curve; all pointwise subtractions verified.
+- Combined figure counts: A=2862, B=5, C=3339, D=6; six c and seven h curves.
+- Recomputed the least-squares optimum independently for validation only:
+  P=5.2367543120512865, 10 unique runs; matches saved fit.
+- Original project CSVs and all packaged IG data verified unchanged by SHA256.
+- Manifest updated for new BRO paths, provenance and current packaged checksums.
+- Old BRO data backed up outside the live package at /home/peng0153/Yuhan/programs/regulation_activity_backups/BRO_before_number_density_20261010_133301.
+
+BRO dataset replacement (2026-10-11):
+- Updated all seven BRO tables to rho_A=0.8, rho_B=0.7, h0=1.5, 100000 steps, 500 snapshots after step 50000.
+- Original CSV schemas preserved; parameter-bearing filenames updated.
+- All 477 q bins per curve and pointwise baseline subtractions verified.
+- Delta/S_A table values exactly match companion exports.
+- Combined panel counts A=2862, B=5, C=3339, D=6 verified.
+- Independent fit validation: P=5.6072389091486485, 10 unique runs; no refitting during packaging.
+- Source CSVs, IG data and simulation source code unchanged by checksum.
+- Current package has no plotting scripts; earlier rendering checks above are historical.
+- Full previous package backup: /home/peng0153/Yuhan/programs/regulation_activity_backups/before_BRO_rhoA08_steps100000_20261011_231035

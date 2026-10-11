@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
   double h0 = (argc > 4) ? stod(argv[4]) : 2.0;
   double T = (argc > 5) ? stod(argv[5]) : 0.10;
   double R_A = (argc > 6) ? stod(argv[6]) : 5.00;
-  int steps = (argc > 7) ? stoi(argv[7]) : 20000;
-  int n_snap = (argc > 8) ? stoi(argv[8]) : 200;
+  int steps = (argc > 7) ? stoi(argv[7]) : 100000;
+  int n_snap = (argc > 8) ? stoi(argv[8]) : 500;
 
   if (L <= 0.0) {
     cerr << "Require L > 0\n";
